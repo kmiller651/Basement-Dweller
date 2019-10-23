@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <meta charset="UTF-8"/>
+<META name="author" description="Kenneth Miller" />
 <title>Basement Dweller</title>
 <!-- The player finds themselves in a basement, chained, and unsure of their location, but their dog is stuck in a cage, and they have to free them and get out. 
 There are two choices of exiting, the basement door, which has an alarm on it that can be disabled, or the front door, which is locked from the inside.
@@ -8,8 +9,13 @@ If the player makes mistakes, they will call to attention the antagonist that wi
 <head>
 
 <script type="text/javascript">
+var playerLoc
+var actionList = [];
 var rooms = [];
-	
+	for (var room=0;room<3;room++) {
+		for (var floor=0;floor<2;floor++) {
+		}
+	} // creates an array of 2 floors and 3 rooms per floor
 	
 var frontDoorLocked = true;
 var items = [];
@@ -17,14 +23,25 @@ var basementDoorAlarm = true;
 
 function gameStart() {
 	document.getElementById("currentState").innerHTML = "Your eyes slowly open, you are in a dark place, it smells musty. What happened? You hear whimpering and see your dog in a cage beside you. You try to move your hands, but they're chained behind you, around a post. What do you do?"
-	
-} // for gameStart()
+	actionList = document.getElementById("actions")
+	actionList.innerHTML = "WALK RIGHT ROOM<br>STRUGGLE<br>SEARCH"
+} // for gameStart() Gives the initial state of the player
+
+function processText() {
+	var pText = document.getElementById("inputText").value
+	var words = s.split(" ");
+	if (words[0] = "WALK") {
+	}
+} // for processText() Takes the inputted text and processes it through the available actions and gives a result
 
 </script>
 </head>
 <body onLoad="gameStart()">
+<!-- Loads the initial game state -->
 <div id="currentState"></div>
-<INPUT type="text" id="myTextBox" />
+<INPUT type="text" id="inputText" />
 <button onClick="processText();">Submit Your Action!</button>
+<br />
+<div id="actions" style="border:2px black;"></div>
 </body>
 </html>
