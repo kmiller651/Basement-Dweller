@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8"/>
+<title>Basement Dweller</title>
+<!-- The player finds themselves in a basement, chained, and unsure of their location, but their dog is stuck in a cage, and they have to free them and get out. 
+There are two choices of exiting, the basement door, which has an alarm on it that can be disabled, or the front door, which is locked from the inside.
+If the player makes mistakes, they will call to attention the antagonist that will prevent them from escaping. -->
+<head>
+
+<script type="text/javascript">
+var rooms = [];
+	
+	
+var frontDoorLocked = true;
+var items = [];
+var basementDoorAlarm = true;
+
+function gameStart() {
+	document.getElementById("currentState").innerHTML = "Your eyes slowly open, you are in a dark place, it smells musty. What happened? You hear whimpering and see your dog in a cage beside you. You try to move your hands, but they're chained behind you, around a post. What do you do?"
+	
+} // for gameStart()
+
+</script>
+</head>
+<body onLoad="gameStart()">
+<div id="currentState"></div>
+<INPUT type="text" id="myTextBox" />
+<button onClick="processText();">Submit Your Action!</button>
+</body>
+</html>
